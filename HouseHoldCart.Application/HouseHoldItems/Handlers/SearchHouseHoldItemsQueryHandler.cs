@@ -5,9 +5,9 @@ using HouseHoldCart.DataAccess.Interfaces;
 
 namespace HouseHoldCart.Application.HouseHoldItems.Handlers
 {
-    public class SearchHouseHoldItemsQueryHandler(IHouseHoldItemDataAccess houseHoldItemDataAccess): IRequestHandler<SearchHouseHoldItemsQuery, List<HouseHoldItem>>
+    public class SearchHouseHoldItemsQueryHandler(IHouseHoldItemDataAccess houseHoldItemDataAccess): IRequestHandler<SearchHouseHoldItemsQuery, IEnumerable<HouseHoldItem>>
     {
-        public async Task<List<HouseHoldItem>> Handle(SearchHouseHoldItemsQuery query, CancellationToken cancellationToken)
+        public async Task<IEnumerable<HouseHoldItem>> Handle(SearchHouseHoldItemsQuery query, CancellationToken cancellationToken)
         {
             return await houseHoldItemDataAccess.SearchAsync("query");
         }

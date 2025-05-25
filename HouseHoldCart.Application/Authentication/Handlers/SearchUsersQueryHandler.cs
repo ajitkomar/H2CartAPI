@@ -1,4 +1,4 @@
-﻿using HouseHoldCart.Application.Auth.Queries;
+﻿using HouseHoldCart.Application.Authentication.Queries;
 using HouseHoldCart.DataAccess.Interfaces;
 using HouseHoldCart.Models.Authentication;
 using MediatR;

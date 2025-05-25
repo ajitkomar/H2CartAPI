@@ -49,7 +49,7 @@ namespace HouseHoldCart.Application.Authentication
 
         public async Task<RefreshToken> GetStoredTokenAsync(string token)
         {
-            return await _refreshTokenDataAccess.RefreshTokenWithUserAsync(token);
+            return await _refreshTokenDataAccess.RefreshTokenIncludingUserAsync(token);
         }
 
         public async Task<RefreshToken> UpdateAsync(RefreshToken refreshToken)
@@ -60,6 +60,11 @@ namespace HouseHoldCart.Application.Authentication
         public async Task<RefreshToken> CreateAsync(RefreshToken refreshToken)
         {
             return await _refreshTokenDataAccess.CreateAsync(refreshToken);
+        }
+
+        public async Task RevokeAllTokenOfUser(int userId)
+        {
+            await _refreshTokenDataAccess.RevokeAllTokenOfUser(userId);
         }
     }
 }

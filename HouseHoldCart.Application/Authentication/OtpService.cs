@@ -2,7 +2,7 @@
 using HouseHoldCart.DataAccess.Interfaces;
 using HouseHoldCart.Models.Authentication;
 
-namespace HouseHoldCart.Application.Auth
+namespace HouseHoldCart.Application.Authentication
 {
     public class OtpService(IOtpCodesDataAccess _otpCodesDataAccess) : IOtpService
     {

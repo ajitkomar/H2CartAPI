@@ -15,11 +15,11 @@ namespace HouseHoldCart.Controllers
         //    return Ok(items);
         //}
 
-        [HttpPost]
-        public async Task<ActionResult<HouseHoldItem>> Post([FromBody] HouseHoldItem item)
-        {
-            var createdItem = await _mediator.Send(new CreateHouseHoldItemCommand(item));
-            return CreatedAtAction(nameof(Get), new { id = createdItem.Id }, createdItem);
-        }
+        //[HttpPost]
+        //public async Task<ActionResult<HouseHoldItem>> Post([FromBody] HouseHoldItem item)
+        //{
+        //    var createdItem = await _mediator.Send(new CreateHouseHoldItemCommand(item));
+        //    return CreatedAtAction(nameof(Get), new { id = createdItem.Id }, createdItem);
+        //}
     }
 }

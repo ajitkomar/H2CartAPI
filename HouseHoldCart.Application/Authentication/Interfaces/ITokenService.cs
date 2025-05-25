@@ -8,5 +8,6 @@ namespace HouseHoldCart.Application.Authentication.Interfaces
         Task<RefreshToken> GetStoredTokenAsync(string token);
         Task<RefreshToken> UpdateAsync(RefreshToken refreshToken);
         Task<RefreshToken> CreateAsync(RefreshToken refreshToken);
+        Task RevokeAllTokenOfUser(int UserId);
     }
 }

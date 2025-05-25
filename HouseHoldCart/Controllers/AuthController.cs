@@ -3,7 +3,6 @@ using HouseHoldCart.Application.Authentication.Queries;
 using HouseHoldCart.Application.Authentication.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
@@ -105,17 +104,7 @@ namespace HouseHoldCart.Controllers
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
 
-            // Revoke all active refresh tokens for the user
-            var tokens = await _context.RefreshTokens
-                .Where(t => t.UserId == userId && !t.IsRevoked && t.Expires > DateTime.UtcNow)
-                .ToListAsync();
-
-            foreach (var token in tokens)
-            {
-                token.IsRevoked = true;
-            }
-
-            await _context.SaveChangesAsync();
+            await _tokenService.RevokeAllTokenOfUser(userId);
 
             return Ok(new { Message = "Logged out successfully" });
         }

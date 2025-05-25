@@ -1,8 +1,8 @@
-﻿using HouseHoldCart.Models.HouseHoldItems;
+﻿using HouseHoldCart.Models.Order;
 
 namespace HouseHoldCart.DataAccess.Interfaces
 {
-    public interface IOrderDataAccess: ICrudOperation<HouseHoldItem>
+    public interface IOrderDataAccess: ICrudOperation<Order>
     {
     }
 }

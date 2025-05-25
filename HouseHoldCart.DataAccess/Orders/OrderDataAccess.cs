@@ -1,9 +1,9 @@
 ﻿using HouseHoldCart.DataAccess.Interfaces;
-using HouseHoldCart.Models.HouseHoldItems;
+using HouseHoldCart.Models.Order;
 
 namespace HouseHoldCart.DataAccess.Orders
 {
-    public class OrderDataAccess(AppDbContext _context) : CrudOperation<HouseHoldItem>(_context), IOrderDataAccess
+    public class OrderDataAccess(AppDbContext _context) : CrudOperation<Order>(_context), IOrderDataAccess
     {
        
     }

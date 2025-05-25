@@ -4,6 +4,7 @@ namespace HouseHoldCart.DataAccess.Interfaces
 {
     public interface IRefreshTokenDataAccess: ICrudOperation<RefreshToken>
     {
-        Task<RefreshToken> RefreshTokenWithUserAsync(string token);
+        Task<RefreshToken> RefreshTokenIncludingUserAsync(string token);
+        Task RevokeAllTokenOfUser(int user);
     }
 }
