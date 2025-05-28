@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using HouseHoldCart.Middleware;
+using HouseHoldCart.DataAccess;
 
 namespace HouseHoldCart
 {

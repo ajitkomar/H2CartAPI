@@ -23,7 +23,6 @@ namespace HouseHoldCart
             services.AddScoped<IOtpService, OtpService>();
 
             // Data access layer
-            services.AddSingleton<AppDbContext>();
             services.AddScoped(typeof(ICrudOperation<>), typeof(CrudOperation<>));
             services.AddScoped<IOtpCodesDataAccess, OtpCodesDataAccess>();
             services.AddScoped<IRefreshTokenDataAccess, RefreshTokenDataAccess>();
